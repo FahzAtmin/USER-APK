@@ -6,118 +6,116 @@
 <title>AbyssHunter</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
   body{
-    font-family:'Segoe UI',system-ui,Roboto,Arial,sans-serif;
+    font-family:'Segoe UI',Roboto,Arial,sans-serif;
     background:#000 url('https://files.catbox.moe/u1ds54.jpg') center/cover fixed;
-    color:#eee;
+    color:#f5f5f5;
   }
-  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-  .login-card{
-    width:100%;max-width:480px;
-    background:linear-gradient(180deg,rgba(20,8,8,0.78),rgba(0,0,0,0.85));
-    border-radius:18px;padding:28px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.7);
+  .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .card{
+    width:100%;max-width:420px;
+    background:rgba(0,0,0,0.7);
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 0 30px rgba(0,0,0,0.8);
     text-align:center;
   }
-  .login-title{font-size:22px;margin-bottom:10px}
-  .logo-wrap{width:150px;height:150px;margin:14px auto;border-radius:14px;overflow:hidden}
+  .login-title{font-size:22px;font-weight:600;margin-bottom:12px}
+  .logo-wrap{width:120px;height:120px;margin:0 auto 16px;border-radius:14px;overflow:hidden}
   .logo-wrap img{width:100%;height:100%;object-fit:cover}
   .field{margin-top:12px}
   input[type="text"],input[type="password"]{
-    width:100%;padding:14px 16px;font-size:15px;
-    border-radius:8px;border:2px solid rgba(255,0,0,0.18);
-    background:rgba(30,0,0,0.25);color:#fff;
+    width:100%;padding:14px;font-size:15px;
+    border-radius:10px;border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.08);color:#fff;
   }
   .btn-login{
     width:100%;margin-top:14px;padding:14px;font-weight:700;font-size:16px;
-    color:#fff;background:linear-gradient(90deg,#b30f0f,#7a0b0b);
-    border:none;border-radius:10px;cursor:pointer;
+    color:#111;background:linear-gradient(180deg,#ddd,#aaa);
+    border:none;border-radius:12px;cursor:pointer;
   }
-  .app{width:100%;max-width:480px}
-  .profile-box{background:rgba(220,220,220,0.06);border-radius:18px;padding:22px;margin-bottom:18px;text-align:center}
-  .avatar{width:140px;height:140px;border-radius:50%;margin:0 auto 12px;overflow:hidden}
+  .profile-box{margin-bottom:20px}
+  .avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto 12px}
   .avatar img{width:100%;height:100%;object-fit:cover}
-  .name{font-size:26px;margin-bottom:8px}
-  .meta{font-family:monospace;font-size:14px}
-  .form-block{border-radius:18px;padding:14px;margin-bottom:18px;border:2px solid rgba(255,255,255,0.04)}
-  .label{font-weight:700;margin:10px 4px;font-size:14px}
+  .name{font-size:22px;font-weight:600;margin-bottom:6px}
+  .meta{font-size:14px;opacity:0.85}
+  .label{text-align:left;font-size:14px;margin:10px 0 4px}
   .input-ghost,.select-ghost{
-    width:100%;padding:16px;border-radius:22px;
-    border:2px solid rgba(255,255,255,0.06);background:rgba(0,0,0,0.6);color:#fff;font-size:16px
+    width:100%;padding:14px;font-size:15px;
+    border-radius:10px;border:1px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.08);color:#fff;margin-bottom:12px
   }
   .send-btn{
-    display:block;width:100%;padding:20px;font-size:20px;border-radius:22px;border:none;
-    background:linear-gradient(180deg,#cfcfcf,#bfbfbf);color:#111;font-weight:800;letter-spacing:2px;
-    cursor:pointer;
+    width:100%;padding:16px;font-size:16px;
+    font-weight:700;letter-spacing:1px;
+    border:none;border-radius:12px;cursor:pointer;
+    background:linear-gradient(180deg,#cfcfcf,#bfbfbf);color:#111;
   }
-  .bottom-nav{display:flex;justify-content:space-between;gap:8px;margin-top:18px;background:rgba(0,0,0,0.6);padding:12px 14px;border-radius:12px}
-  .nav-item{flex:1;text-align:center;cursor:pointer}
-  .nav-item i{display:block;font-size:22px;margin-bottom:6px}
+  .status{margin-top:10px;font-size:13px}
+  .bottom-nav{display:flex;justify-content:space-around;margin-top:18px}
+  .nav-item{flex:1;text-align:center;font-size:14px;cursor:pointer;padding:8px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- LOGIN VIEW -->
-  <div id="view-login" class="login-card">
+  <!-- LOGIN -->
+  <div id="view-login" class="card">
     <div class="login-title">Login to Continue</div>
-    <div class="logo-wrap"><img src="https://files.catbox.moe/u1ds54.jpg" alt="logo"></div>
+    <div class="logo-wrap"><img src="https://i.ibb.co/7z6jYFq/avatar-dev.png"></div>
     <div class="field"><input id="inUser" type="text" placeholder="USERNAME"></div>
     <div class="field"><input id="inPass" type="password" placeholder="PASSWORD"></div>
     <button class="btn-login" onclick="doLogin()">LOGIN</button>
   </div>
 
-  <!-- DASHBOARD VIEW -->
-  <div id="view-dash" style="display:none;width:100%;max-width:480px">
-    <div class="app">
+  <!-- DASHBOARD -->
+  <div id="view-dash" class="card" style="display:none">
+    <div class="profile-box">
+      <div class="avatar"><img id="pfImg" src="https://i.ibb.co/WBqykWc/avatar-reseller.png"></div>
+      <div class="name" id="pfName">username</div>
+      <div class="meta" id="pfMeta">Role: RESELLER · Exp: 2025-10-07</div>
+    </div>
 
-      <div class="profile-box">
-        <div class="avatar"><img id="pfImg" src="https://i.ibb.co/WBqykWc/avatar-reseller.png" alt="avatar"></div>
-        <div class="name" id="pfName">username</div>
-        <div class="meta" id="pfMeta">Role: RESELLER · Exp: 2025-10-07</div>
-      </div>
+    <!-- HOME -->
+    <div id="content-home" class="page">
+      <h2>Selamat Datang di AbyssHunter</h2>
+      <p style="margin-top:10px">Silakan pilih menu di bawah.</p>
+    </div>
 
-      <div id="content-home" class="page">
-        <h2 style="text-align:center">Selamat Datang di AbyssHunter</h2>
-        <p style="text-align:center;margin-top:10px">Silakan pilih menu di bawah.</p>
-      </div>
+    <!-- BUG -->
+    <div id="content-bug" class="page" style="display:none">
+      <div class="label">Target Number</div>
+      <input id="target" class="input-ghost" placeholder="e.g. +62xxxxxxxxxx">
+      <div class="label">Select Bug</div>
+      <select id="bug" class="select-ghost">
+        <option>crash</option>
+        <option>forceclose</option>
+        <option>delay</option>
+        <option>sistemui</option>
+      </select>
+      <button class="send-btn" onclick="handleSend()">⨂ SEND BUG</button>
+      <div class="status" id="status"></div>
+    </div>
 
-      <div id="content-bug" class="page" style="display:none">
-        <div class="form-block">
-          <div class="label">Target Number</div>
-          <input id="target" class="input-ghost" placeholder="e.g. +62xxxxxxxxxx">
-          <div class="label">Select Bug</div>
-          <select id="bug" class="select-ghost">
-            <option>crash</option>
-            <option>forceclose</option>
-            <option>delay</option>
-            <option>sistemui</option>
-          </select>
-          <button class="send-btn" onclick="handleSend()">⨂ SEND BUG</button>
-          <div id="status" style="margin-top:12px;font-size:13px"></div>
-        </div>
-      </div>
+    <!-- ACT -->
+    <div id="content-act" class="page" style="display:none">
+      <h3>Masa Aktif</h3>
+      <p style="margin-top:10px" id="expInfo">Exp: -</p>
+    </div>
 
-      <div id="content-act" class="page" style="display:none">
-        <h3 style="text-align:center">Masa Aktif</h3>
-        <p style="text-align:center;margin-top:10px" id="expInfo">Exp: -</p>
-      </div>
+    <!-- CHAT -->
+    <div id="content-chat" class="page" style="display:none">
+      <h3>Hubungi Admin</h3>
+      <p style="margin-top:10px">
+        <button class="send-btn" onclick="contactAdmin()">💬 Chat Admin di Telegram</button>
+      </p>
+    </div>
 
-      <div id="content-chat" class="page" style="display:none">
-        <h3 style="text-align:center">Hubungi Admin</h3>
-        <p style="text-align:center;margin-top:10px">
-          <button class="send-btn" onclick="contactAdmin()">💬 Chat Admin di Telegram</button>
-        </p>
-      </div>
-
-      <div class="bottom-nav">
-        <div class="nav-item" onclick="showPage('home')"><i>🏠</i>Home</div>
-        <div class="nav-item" onclick="showPage('bug')"><i>📞</i>Bug</div>
-        <div class="nav-item" onclick="showPage('act')"><i>⚡</i>Act</div>
-        <div class="nav-item" onclick="showPage('chat')"><i>💬</i>Chat</div>
-      </div>
-
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="showPage('home')">🏠 Home</div>
+      <div class="nav-item" onclick="showPage('bug')">📞 Bug</div>
+      <div class="nav-item" onclick="showPage('act')">⚡ Act</div>
+      <div class="nav-item" onclick="showPage('chat')">💬 Chat</div>
     </div>
   </div>
 
@@ -125,12 +123,12 @@
 
 <script>
 const users=[
-  {user:'yanzx',pass:'yanzx',role:'RESELLER',exp:'2025-10-07',avatar:'https://files.catbox.moe/u1ds54.jpg'},
-  {user:'fahz',pass:'fahz',role:'DEVELOPER',exp:'2026-01-01',avatar:'https://files.catbox.moe/u1ds54.jpg'},
-  {user:'alan',pass:'alan',role:'CEO',exp:'2025-12-30',avatar:'https://files.catbox.moe/u1ds54.jpg'},
-  {user:'budi',pass:'budi',role:'OWNER',exp:'2025-11-20',avatar:'https://files.catbox.moe/u1ds54.jpg'},
-  {user:'sari',pass:'sari',role:'PT',exp:'2025-10-15',avatar:'https://files.catbox.moe/u1ds54.jpg'},
-  {user:'tk',pass:'tk',role:'TK',exp:'2025-09-30',avatar:'https://files.catbox.moe/u1ds54.jpg'}
+  {user:'yanzx',pass:'yanzx',role:'RESELLER',exp:'2025-10-07',avatar:'https://i.ibb.co/WBqykWc/avatar-reseller.png'},
+  {user:'fahz',pass:'fahz',role:'DEVELOPER',exp:'2026-01-01',avatar:'https://i.ibb.co/WBqykWc/avatar-reseller.png'},
+  {user:'alan',pass:'alan',role:'CEO',exp:'2025-12-30',avatar:'https://i.ibb.co/WBqykWc/avatar-reseller.png'},
+  {user:'budi',pass:'budi',role:'OWNER',exp:'2025-11-20',avatar:'https://i.ibb.co/WBqykWc/avatar-reseller.png'},
+  {user:'sari',pass:'sari',role:'PT',exp:'2025-10-15',avatar:'https://i.ibb.co/WBqykWc/avatar-reseller.png'},
+  {user:'tk',pass:'tk',role:'TK',exp:'2025-09-30',avatar:'https://i.ibb.co/WBqykWc/avatar-reseller.png'}
 ];
 let current=null;
 
@@ -158,28 +156,7 @@ function handleSend(){
   const bug=document.getElementById('bug').value;
   if(!current){alert('Login dulu');return;}
   if(!tgt){alert('Masukkan nomor target');return;}
-
-  const BOT_TOKEN = "8294390030:AAGNRVAkLylpjMkF2a9o7bWB-0Q4xFvpcPc";   // ganti token bot
-  const CHAT_ID = "8459065155";       // ganti chat_id tujuan
-  
-  const text = `/${bug} ${tgt}`;
-  
-  fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({chat_id:CHAT_ID,text:text})
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    if(data.ok){
-      document.getElementById('status').innerText="✅ Bug berhasil dikirim ke bot!";
-    }else{
-      document.getElementById('status').innerText="❌ Gagal kirim ke bot!";
-    }
-  })
-  .catch(err=>{
-    document.getElementById('status').innerText="⚠️ Error: "+err;
-  });
+  document.getElementById('status').innerText=`/${bug} ${tgt} terkirim ke bot.`;
 }
 function contactAdmin(){
   window.open("https://t.me/FahzOfficialNew","_blank");
