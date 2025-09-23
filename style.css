@@ -3,19 +3,15 @@
   margin: 0;
   padding: 0;
 }
-
 html, body {
   height: 100%;
 }
-
 body {
-  font-family: 'Poppins', 'Segoe UI', Roboto, Arial, sans-serif;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
   background: #000 url('https://files.catbox.moe/mp9vqc.jpg') center/cover fixed;
-  color: #f1f1f1;
-  letter-spacing: 0.3px;
+  color: #f5f5f5;
+  text-shadow: 0 0 6px rgba(255,255,255,0.2);
 }
-
-/* wrapper */
 .wrap {
   min-height: 100vh;
   display: flex;
@@ -24,41 +20,38 @@ body {
   padding: 24px;
 }
 
-/* LOGIN CARD */
+/* LOGIN */
 .login-card {
   width: 100%;
   max-width: 480px;
-  background: linear-gradient(160deg, rgba(25, 25, 25, 0.95), rgba(0, 0, 0, 0.88));
+  background: linear-gradient(180deg, rgba(30,30,30,0.9), rgba(10,10,10,0.95));
   border-radius: 20px;
-  padding: 32px 28px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.9);
   text-align: center;
-  backdrop-filter: blur(6px);
 }
-
 .login-title {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-
 .logo-wrap {
   width: 150px;
   height: 150px;
   margin: 14px auto;
-  border-radius: 18px;
+  border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  border: 3px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255,0,0,0.6);
 }
 .logo-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-/* input field */
 .field {
   margin-top: 14px;
 }
@@ -67,52 +60,56 @@ input[type="text"], input[type="password"] {
   padding: 14px 16px;
   font-size: 15px;
   border-radius: 10px;
-  border: 2px solid rgba(255, 0, 0, 0.25);
-  background: rgba(40, 0, 0, 0.3);
+  border: 2px solid rgba(255,0,0,0.2);
+  background: rgba(25,25,25,0.7);
   color: #fff;
   outline: none;
   transition: 0.3s;
 }
-input[type="text"]:focus, input[type="password"]:focus {
-  border-color: #ff3b3b;
-  box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+input:focus {
+  border-color: #ff2d2d;
+  box-shadow: 0 0 10px rgba(255,0,0,0.5);
 }
-
-/* login button */
 .btn-login {
   width: 100%;
   margin-top: 16px;
   padding: 14px;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 16px;
   color: #fff;
-  background: linear-gradient(90deg, #ff1f1f, #8b0000);
+  background: linear-gradient(90deg,#e60000,#900000);
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
 .btn-login:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);
+  background: linear-gradient(90deg,#ff3333,#b30000);
+  transform: scale(1.05);
 }
 
-/* PROFILE BOX */
+/* DASHBOARD */
+.app {
+  width: 100%;
+  max-width: 480px;
+}
 .profile-box {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255,255,255,0.05);
   border-radius: 20px;
   padding: 24px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   text-align: center;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
 }
 .avatar {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin: 0 auto 12px;
+  margin: 0 auto 14px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 .avatar img {
   width: 100%;
@@ -120,88 +117,92 @@ input[type="text"]:focus, input[type="password"]:focus {
   object-fit: cover;
 }
 .name {
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: bold;
   margin-bottom: 6px;
-  font-weight: 700;
 }
 .meta {
   font-family: monospace;
   font-size: 14px;
-  color: #ccc;
+  opacity: 0.9;
 }
 
-/* FORM BLOCK */
+/* FORM */
 .form-block {
-  border-radius: 18px;
-  padding: 16px;
-  margin-bottom: 18px;
-  border: 2px solid rgba(255, 255, 255, 0.08);
-  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.6);
 }
 .label {
   font-weight: 700;
-  margin: 10px 4px;
+  margin: 12px 4px;
   font-size: 14px;
-  color: #f0f0f0;
+  color: #ff5555;
+  letter-spacing: 1px;
 }
 .input-ghost, .select-ghost {
   width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  background: rgba(10, 10, 10, 0.7);
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(20,20,20,0.8);
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   outline: none;
+  transition: 0.3s;
 }
 .input-ghost:focus, .select-ghost:focus {
-  border-color: #ff3b3b;
-  box-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
+  border-color: #ff3333;
+  box-shadow: 0 0 10px rgba(255,50,50,0.5);
 }
-
-/* SEND BUTTON */
 .send-btn {
   display: block;
   width: 100%;
   padding: 18px;
   font-size: 18px;
-  border-radius: 14px;
+  border-radius: 20px;
   border: none;
-  background: linear-gradient(180deg, #fff, #cfcfcf);
-  color: #111;
+  background: linear-gradient(90deg,#ff4444,#ff1111);
+  color: #fff;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   cursor: pointer;
-  transition: 0.25s;
+  margin-top: 16px;
+  transition: 0.3s;
 }
 .send-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(90deg,#ff6666,#cc0000);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255,50,50,0.4);
 }
 
 /* NAV */
 .bottom-nav {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: 10px;
   margin-top: 18px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.8);
   padding: 12px 14px;
   border-radius: 14px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
 }
 .nav-item {
   flex: 1;
   text-align: center;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  color: #f0f0f0;
+  color: #ddd;
+  font-size: 14px;
+  transition: 0.2s;
+}
+.nav-item:hover {
+  color: #ff3333;
+  transform: scale(1.1);
 }
 .nav-item i {
   display: block;
   font-size: 22px;
   margin-bottom: 4px;
-}
-.nav-item:hover {
-  color: #ff3b3b;
-  }
+    }
