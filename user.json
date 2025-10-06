@@ -40,5 +40,12 @@
     "role": "owner",
     "expiresAt": 1846069474390,
     "createdAt": 1759755874390
+  },
+  {
+    "username": "Ponza Technical",
+    "password": "Ponza Technical",
+    "role": "owner",
+    "expiresAt": 1846069527497,
+    "createdAt": 1759755927497
   }
 ]
