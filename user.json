@@ -26,5 +26,12 @@
     "role": "owner",
     "expiresAt": 999,
     "createdAt": 1759749278270
+  },
+  {
+    "username": "Yudz",
+    "password": "Yudz",
+    "role": "owner",
+    "expiresAt": 1846063297718,
+    "createdAt": 1759749697718
   }
 ]
