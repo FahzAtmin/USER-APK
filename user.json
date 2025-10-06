@@ -12,5 +12,12 @@
     "role": "owner",
     "expiresAt": 2623655583627,
     "createdAt": 1759741983627
+  },
+  {
+    "username": "manz",
+    "password": "manz",
+    "role": "owner",
+    "expiresAt": 999,
+    "createdAt": 1759747501277
   }
 ]
