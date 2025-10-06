@@ -33,5 +33,12 @@
     "role": "owner",
     "expiresAt": 1785670122512,
     "createdAt": 1759749697718
+  },
+  {
+    "username": "RULSTR",
+    "password": "RULSTR1",
+    "role": "owner",
+    "expiresAt": 1846069474390,
+    "createdAt": 1759755874390
   }
 ]
