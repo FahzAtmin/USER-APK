@@ -1,12 +1,5 @@
 [
   {
-    "username": "Admin",
-    "password": "Fahz",
-    "role": "owner",
-    "expiresAt": 88159586907654,
-    "createdAt": 1759670504670
-  },
-  {
     "username": "Zarx",
     "password": "Zarxv",
     "role": "owner",
