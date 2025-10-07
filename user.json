@@ -54,5 +54,12 @@
     "role": "user",
     "expiresAt": 1762437204379,
     "createdAt": 1759845204379
+  },
+  {
+    "username": "yudz",
+    "password": "yudz",
+    "role": "reseller",
+    "expiresAt": 1762437349253,
+    "createdAt": 1759845349253
   }
 ]
