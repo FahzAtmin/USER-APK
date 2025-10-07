@@ -47,5 +47,12 @@
     "role": "owner",
     "expiresAt": 1846079299031,
     "createdAt": 1759765699031
+  },
+  {
+    "username": "dafay",
+    "password": "dafay",
+    "role": "user",
+    "expiresAt": 1762437204379,
+    "createdAt": 1759845204379
   }
 ]
